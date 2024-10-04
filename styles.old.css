@@ -1,0 +1,111 @@
+/* Style goes here */
+
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    font-family: Verdana, Tahoma, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    text-shadow: 1px 1px 3px black;
+}
+
+header {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    padding: 5px 20px 5px 20px;
+    border: dotted 4px black;
+    background-color: beige;
+}
+
+section {
+    margin: auto;
+    padding: auto;
+}
+
+div {
+    margin: auto;
+    padding: auto;
+}
+
+#alert {
+    font-weight: bold;
+    color: red;
+}
+
+input {
+    font-size: 16px;
+    border: solid 2px black;
+    border-radius: 25px;
+    flex-grow: 1;
+    height: 20px;
+    width: 500px;
+    padding: 10px;
+}
+
+.completed {
+    color: gray;
+    text-decoration-line: line-through;
+
+}
+
+span:hover {
+    cursor: pointer;
+    color: darkgreen;
+}
+
+ul {
+    min-width: 25%;
+    background-color: beige;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    list-style: none;
+    height: 20px;
+    width: 400px;
+}
+
+#addButton {
+    font-size: 16px;
+    border: solid 2px black;
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#addButton:hover {
+    color: white;
+    background-color: darkgreen;
+}
+
+.deleteButton {
+    border: none;
+    background-color: beige;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.deleteButton:hover {
+    cursor: pointer;
+    color: white;
+    background-color: crimson;
+    border: solid 2px black;
+    font-size: 20px;
+}
+
+#appInfo {
+    font-size: large;
+    padding: 20px;
+}
