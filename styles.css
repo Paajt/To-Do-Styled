@@ -117,6 +117,7 @@ input:focus {
     opacity: 100%;
 }
 
+/* Blinking effect when alert message shows */
 .alert-animation {
 
     animation-name: alert-opacity;
@@ -173,6 +174,7 @@ span {
     color: black;
 }
 
+/* color-transition when task is completed */
 .completed {
     transition: color 1s;
     color: gray;
