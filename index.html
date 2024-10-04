@@ -11,40 +11,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
-<body class="container">
+<body>
     <!-- "Logo" on top of page and icon from Font awesome -->
-    <header class="top">
-        <h1 class="headline">My ToDo</h1>
-    </header>
+    <section class="container">
+        <header class="top">
+            <h1 class="headline">My ToDo</h1>
+        </header>
+        <!-- Tasks completed -->
+        <p id="tasksDone">0 completed</p>
 
-    <!-- Info about the app -->
-    <p id="appInfo">Add a task, click on it to complete it or remove it with delete button.</p>
+        <!-- Label, input and add button -->
+        <section>
+            <label for="inputTodo"></label>
+            <input type="text" name="inputTodo" id="inputTodo">
+            <button type="button" id="addButton">OK</button>
+        </section>
 
-    <!-- Label, input and add button -->
-    <section>
-        <label for="inputTodo"></label>
-        <input type="text" name="inputTodo" id="inputTodo" placeholder="Add task...">
-        <button type="button" id="addButton">Add Task</button>
+        <!-- Alert when empty input -->
+        <p id="alert" class="alert-animation"></p>
+
+        <!-- Task list -->
+        <div>
+            <ul id="todoList">
+            </ul>
+        </div>
+
     </section>
-
-    <!-- Alert when empty input -->
-    <p id="alert"></p>
-
-    <!-- Task list -->
-    <div>
-        <ul id="todoList">
-        </ul>
-    </div>
-
-
-    <!-- Task counter not needed in assigment
-    <p id="tasksLeft">Tasks left: 0</p>
-    -->
-    
-    <!-- Tasks completed -->
-    <p id="tasksDone">Tasks completed: 0</p>
-
-    <script src='script.js'></script>
+        <script src='script.js'></script>
 </body>
 
 </html>

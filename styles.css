@@ -1,2 +1,181 @@
 /* Style goes here */
+html {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(pink, salmon);
 
+    /* USE for black cursor
+    cursor: url(arrow-cursor-outline.svg) 10 10, auto;
+    */
+}
+
+body {
+    text-align: center;
+}
+
+.container {
+    display: inline-block;
+    width: 40%;
+    margin: 4px;
+    padding: 10px 0px 25px 0px;
+    background-color: white;
+    box-shadow: salmon 0 0 10px;
+    animation-name: bounce;
+    animation-duration: 1s;
+}
+
+@keyframes bounce {
+
+    0% {
+        transform: translateY(-200%);
+    }
+
+    33% {
+        transform: translateY(25%);
+    }   
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+h1 {
+    font-family: serif;
+    font-size: 3rem;
+    margin: 8px;
+    color: black;
+
+    animation-name: fade;
+    animation-duration: 2s;
+   
+}
+
+p {
+    font-family: Arial;
+    font-weight: bolder;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+#addButton {
+    font-size: 16px;
+    font-size: x-large;
+    font-weight: bolder;
+
+    /* USE for black cursor 
+    cursor: url(arrow-cursor-outline.svg) 10 10, auto;
+    */
+
+    padding: 2px 6px;
+    border: solid gray 1px;
+    border-radius: 2px;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+#addButton:hover {
+    background-color: lightgray;
+
+}
+
+input {
+    width: 50%;
+    font-size: x-large;
+    padding: 2px 6px;
+    border: solid, gray, 1px;
+    border-radius: 2px;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+input:focus {
+    font-size: x-large;
+    padding: 2px, 6px;
+    border-radius: 2px;
+    border: solid lightblue 1px;
+    outline: solid blue 1px;
+}
+
+#alert {
+    font-size: 14px;
+    font-style: italic;
+    color: red;
+    opacity: 100%;
+}
+
+.alert-animation {
+
+    animation-name: alert-opacity;
+    animation-duration: 1s;
+}
+
+@keyframes alert-opacity {
+    0% {
+        opacity: 100%;
+    }
+
+    25% {
+        opacity: 0%;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+    75% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+
+}
+
+li {
+
+    font-family: Arial;
+    font-size: 1.5rem;
+    list-style-type: none;
+    margin: 0 10px 10px 0;
+    padding: auto;
+    cursor: pointer;
+}
+
+span {
+    margin-right: 5px;
+}
+
+.deleteButton {
+    border: none;
+    font-size: 30px;
+    padding: 5px;
+    margin-left: 5px;
+    color: gray;
+}
+
+.deleteButton:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.completed {
+    transition: color 1s;
+    color: gray;
+    text-decoration-line: line-through;
+
+}

@@ -4,23 +4,16 @@
 const inputTodo = document.querySelector('#inputTodo');
 const addButton = document.querySelector('#addButton');
 const alertText = document.querySelector('#alert');
-const tasksLeft = document.querySelector('#tasksLeft');
 const tasksDone = document.querySelector('#tasksDone');
 const todoList = document.querySelector('#todoList');
 
 // Declared variables
 const todoArray = [];
 let tasksCompleted = 0;
-let taskCounter = 0;
-
-// Function to update the task counter
-function updateTaskCounter() {
-    tasksLeft.innerText = `Tasks left: ${taskCounter}`;
-}
 
 // Function to update the task completed counter
 function updateTasksCompleted() {
-    tasksDone.innerText = `Tasks completed: ${tasksCompleted}`;
+    tasksDone.innerText = `${tasksCompleted} completed`;
 }
 
 // EventListener for clicking the add button
@@ -31,13 +24,23 @@ addButton.addEventListener(
         // Get value from input and remove whitespaces
         let text = inputTodo.value.trim();
 
+        // Makes sure the animation class is removed from start 
+        alertText.classList.remove("alert-animation");
+
         // Condition: check input not empty
         if (text === '') {
-            alertText.innerText = 'Need to type something!';
+            alertText.innerText = 'Input must not be empty';
+
+            // Small delay for browser to register the class being removed and added again
+            setTimeout(function() {
+                alertText.classList.add("alert-animation");
+            }, 10);
+
             return;
         }
         else {
             alertText.innerText = '';
+
         }
 
         // Create task object
@@ -49,11 +52,6 @@ addButton.addEventListener(
         // Add taskObject to the Array
         todoArray.push(taskObject);
 
-        // Increase task count
-        taskCounter++;
-
-        updateTaskCounter();
-
         // Add new html elements in ul
         const listItem = document.createElement('li');
         todoList.appendChild(listItem);
@@ -64,7 +62,7 @@ addButton.addEventListener(
 
         // Add delete button element in html with trash can icon
         const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        deleteButton.innerHTML = '&#128465;';
         deleteButton.type = 'button';
         deleteButton.classList.add('deleteButton');
         listItem.appendChild(deleteButton);
@@ -81,15 +79,12 @@ addButton.addEventListener(
 
                 // Update both counters when task is clicked on/completed AND updates if not completed again
                 if (taskObject.completed) {
-                    taskCounter--;
                     tasksCompleted++;
                 }
                 else {
-                    taskCounter++;
                     tasksCompleted--;
                 }
 
-                updateTaskCounter();
                 updateTasksCompleted();
                 
             }
@@ -117,8 +112,7 @@ addButton.addEventListener(
                 taskCounter--;
             }
 
-            // Update task counters
-            updateTaskCounter();
+            // Update task counter
             updateTasksCompleted();
 
         });
