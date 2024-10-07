@@ -31,7 +31,7 @@ addButton.addEventListener(
         if (text === '') {
             alertText.innerText = 'Input must not be empty';
 
-            // Small delay for browser to register the class being removed and added again
+            // Small delay for browser to register the class being removed before added
             setTimeout(function() {
                 alertText.classList.add("alert-animation");
             }, 10);
@@ -54,18 +54,24 @@ addButton.addEventListener(
 
         // Add new html elements in ul
         const listItem = document.createElement('li');
+        listItem.classList.add('fadeInEffect');
         todoList.appendChild(listItem);
 
         const itemLabel = document.createElement('span');
         itemLabel.innerText = text;
         listItem.appendChild(itemLabel);
 
-        // Add delete button element in html with trash can icon
+        // Add delete button element in html with trashcan icon
         const deleteButton = document.createElement('button');
         deleteButton.innerHTML = '&#128465;';
         deleteButton.type = 'button';
         deleteButton.classList.add('deleteButton');
         listItem.appendChild(deleteButton);
+
+        // Animation class for opacity and translateY when adding tasks to the list
+        setTimeout(() => {
+            listItem.classList.add('show');
+        }, 10);
 
         // Add eventlistener to the span-element
         itemLabel.addEventListener(
@@ -106,11 +112,6 @@ addButton.addEventListener(
 
             // Remove the list item from DOM
             todoList.removeChild(listItem);
-
-            // Decrease task count only if the task was clicked on/completed
-            if (!taskObject.completed) {
-                taskCounter--;
-            }
 
             // Update task counter
             updateTasksCompleted();
