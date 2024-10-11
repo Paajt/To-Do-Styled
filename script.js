@@ -25,7 +25,7 @@ addButton.addEventListener(
         let text = inputTodo.value.trim();
 
         // Makes sure the animation class is removed from start 
-        alertText.classList.remove("alert-animation");
+        alertText.classList.remove('alertAnimation');
 
         // Condition: check input not empty
         if (text === '') {
@@ -33,7 +33,7 @@ addButton.addEventListener(
 
             // Small delay for browser to register the class being removed before added
             setTimeout(function() {
-                alertText.classList.add("alert-animation");
+                alertText.classList.add('alertAnimation');
             }, 10);
 
             return;
@@ -75,7 +75,7 @@ addButton.addEventListener(
 
         // Add eventlistener to the span-element
         itemLabel.addEventListener(
-            'click',
+            "click",
             function () {
 
                 //Add and remove class for completed task
@@ -97,7 +97,7 @@ addButton.addEventListener(
         );
 
         // Add EvenListener for delete button
-        deleteButton.addEventListener('click', function () {
+        deleteButton.addEventListener("click", function () {
 
             // Remove task from todoArray
             const index = todoArray.indexOf(taskObject);
