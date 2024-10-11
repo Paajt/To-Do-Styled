@@ -2,11 +2,7 @@
 html {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(pink, salmon);
-
-    /* USE for black cursor
-    cursor: url(arrow-cursor-outline.svg) 10 10, auto;
-    */
+    background-image: linear-gradient(rgb(253, 192, 192), lightcoral);
 }
 
 body {
@@ -15,16 +11,18 @@ body {
 
 .container {
     display: inline-block;
-    width: 40%;
+    width: 41%;
     height: auto;
     margin: 4px;
-    padding: 10px 0px 25px 0px;
+    padding: 25px 0px 25px 0px;
     background-color: white;
-    box-shadow: salmon 0 0 10px;
+    box-shadow: lightcoral 0 0 30px;
+    /* Bounce animation intro */
     animation-name: bounce;
     animation-duration: 1s;
 }
 
+/* Bounce animation intro */
 @keyframes bounce {
 
     0% {
@@ -40,6 +38,7 @@ body {
     }
 }
 
+/* Fade in animation intro */
 @keyframes fade {
     0% {
         opacity: 0;
@@ -54,42 +53,40 @@ body {
     }
 }
 
-h1 {
+h1.headline {
     font-family: serif;
-    font-size: 5rem;
-    font-weight: bolder;
-    margin: 8px;
+    font-size: 90px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
     color: black;
-
+    /* Fade in animation intro */
     animation-name: fade;
     animation-duration: 2s;
 
 }
 
-p {
-    font-family: Arial;
-    font-size: 1.75rem;
+p#tasksDone {
+    padding-bottom: 30px;
+    font-family: Arial, Helvetica;
+    font-size: 28px;
     text-shadow: black 0 0 1px;
+    /* Fade in animation intro */
     animation-name: fade;
     animation-duration: 2s;
 }
 
 #addButton {
-    height: 46px;
-    width: 80px;
-    margin: 4px 8px 4px 8px;
+    font-family: Arial, Helvetica;
+    font-size: 40px;
+    text-shadow: black 0 0 1px;
+    width: 100px;
+    height: 64px;
+    margin: 0 10px;
     background-color: rgb(255, 235, 235);
-    font-size: 20px;
-    font-size: x-large;
-    font-weight: bolder;
-
-    /* USE for black cursor 
-    cursor: url(arrow-cursor-outline.svg) 10 10, auto;
-    */
-
-    padding: 2px 6px;
-    border: solid gray 1.5px;
-    border-radius: 2px;
+    padding: 0;
+    border: 2px solid gray;
+    border-radius: 5px;
+    /* Fade in animation intro */
     animation-name: fade;
     animation-duration: 2s;
 }
@@ -100,39 +97,46 @@ p {
 }
 
 input {
-    width: 30%;
-    height: 40px;
-    font-size: x-large;
-    padding: 2px 6px;
-    border: solid, gray, 1.5px;
-    border-radius: 2px;
+    width: 40%;
+    height: 60px;
+    padding: 0px 6px;
+    margin: 0;
+    font-family: Arial, Helvetica;
+    font-size: 40px;
+    text-shadow: black 0 0 1px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    /* Fade in animation intro */
     animation-name: fade;
     animation-duration: 2s;
 }
 
+/* Blue border when inputbox is clicked */
 input:focus {
-    font-size: x-large;
-    padding: 2px, 6px;
-    border-radius: 2px;
-    border: solid lightblue 1px;
-    outline: solid blue 1px;
+    padding: 0px 6px;
+    border-radius: 5px;
+    border: 2px solid blue;
+    outline: none;
 }
 
 #alert {
-    font-size: 20px;
+    font-family: helvetica;
+    font-size: 28px;
     font-style: italic;
     color: red;
+    text-shadow: red 0 0 1px;
     opacity: 100%;
+    margin: 10px 0 50px 0;
 }
 
-/* Blinking effect when alert message shows */
-.alert-animation {
+/* Blinking red animation when alert message shows */
+.alertAnimation {
 
-    animation-name: alert-opacity;
+    animation-name: alertOpacity;
     animation-duration: 1s;
 }
 
-@keyframes alert-opacity {
+@keyframes alertOpacity {
     0% {
         opacity: 100%;
     }
@@ -155,16 +159,16 @@ input:focus {
 }
 
 li {
-    font-family: Arial;
-    font-size: 1.5rem;
+    font-family: Arial, Helvetica;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: black 0 0 1px;
     list-style-type: none;
-    margin: 0 10px 10px 0;
-    padding: auto;
-    cursor: pointer;
+    margin: 10px 25px 20px 0;
+    padding: 0 0 0 0;
 }
 
-
-/* Fade effect for when adding tasks */
+/* Fade effect when adding tasks */
 .fadeInEffect {
     opacity: 0;
     transform: translateY(10px);
@@ -177,14 +181,19 @@ li {
 }
 
 span {
-    margin-right: 5px;
+    cursor: pointer;
+    margin: 20px 5px 0 0;
+}
+
+span:hover {
+    text-decoration: line-through;
 }
 
 .deleteButton {
     border: none;
-    font-size: 30px;
+    font-size: 3vh;
     padding: 5px;
-    margin-left: 5px;
+    margin-left: 8px;
     color: gray;
 }
 
@@ -193,10 +202,9 @@ span {
     color: black;
 }
 
-/* color-transition when task is completed */
+/* Color animation when task is completed (clicked) */
 .completed {
     transition: color 1s;
     color: gray;
     text-decoration-line: line-through;
-
 }
